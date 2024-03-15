@@ -1,0 +1,303 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(0, 100%, 90%);
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+header {
+    background-color: hsl(0, 100%, 30%);
+    color: hsl(0, 100%, 90%);
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    border-bottom: 9px solid hsl(0, 100%, 90%);
+    font-weight: bold; 
+    font-family: Copperplate;
+}
+
+.page-divider {
+    height: 20vh; 
+    background-color: hsl(0, 100%, 90%);
+    margin: 5vh; 
+}
+
+.input-container {
+    width: 80%;
+    margin: 50px auto 0; 
+    background-color: hsl(0, 100%, 30%);
+    border-radius: 30px;
+    color: white;
+}
+
+.input-container table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    background-color: hsl(0, 100%, 30%);
+}
+
+.input-container table td {
+    padding: 10px;
+}
+
+
+/*  FAQ  */
+
+.description {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.description-item {
+    margin-bottom: 20px;
+}
+
+.question {
+    cursor: pointer;
+    margin: 0;
+    padding: 10px;
+    background-color: hsl(0, 100%, 20%);
+    color: hsl(0, 100%, 90%);
+    position: relative;
+}
+
+.question::after {
+    content: '\25BE'; /* Unicode down arrow */
+    position: absolute;
+    right: 10px;
+}
+
+.answer {
+    display: none;
+    padding: 10px;
+    background-color: hsl(0, 100%, 90%);
+    color: hsl(0, 100%, 20%);
+}
+
+.show {
+    display: block;
+}
+
+.center {
+    text-align: center;
+}
+
+.center img {
+    display: none;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+/*  end of FAQ styling */
+
+.emphased-words{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.emphased-words:hover {
+    color: hsl(0, 100%, 20%);
+}
+
+.placeholder-input {
+width: 70px;
+position: relative;
+color: hsl(0, 100%, 30%);
+}
+
+.placeholder-input  label {
+    position: absolute;
+    top: 0;
+    left: 3;
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    transition: 300ms all; 
+}
+
+.placeholder-input input {
+    width: 95%;
+    height: 40px;
+    padding: 0 15px;
+    background: hsl(0, 100%, 90%)
+}
+
+.placeholder-input input:focus + label,
+.placeholder-input input:valid + label {
+    height: 50%;
+    padding-left: 0;
+    transform: translateY(-100%);
+    font-size: 12px;
+    color: hsl(0, 100%, 90%);
+}
+
+.output-container {
+    width: 80%;
+    margin: 50px auto 0; 
+    background-color: hsl(0, 100%, 30%);
+    color: white; 
+    padding: 20px; 
+    box-sizing: border-box; 
+    display: none;
+}
+
+.output-container table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    background-color: hsl(0, 100%, 30%);
+    color: white; 
+}
+
+.output-container table td {
+    padding: 10px;
+}
+
+.splittedNumbers{
+    font-size:5vw; 
+    font-weight: bold; 
+    font-family: Copperplate;
+    border: 2% solid hsl(0, 100%, 30%);
+    background-color: black;
+    width: 100%;
+    padding: 3%;
+}
+
+#digit1:hover{
+    background-color: red;
+    color: black;
+}
+
+#digit2:hover{
+    background-color: orange;
+    color: black;
+}
+
+#digit3:hover{
+    background-color: blue;
+    color: black;
+}
+
+#digit4:hover{
+    background-color: green;
+    color: black;
+}
+
+.lines-Container {
+    margin: auto;
+    padding: auto;
+    padding-left: 50px;
+    width: 800px;
+    height: 800px;
+    position: relative;
+    border: 2px solid hsl(0, 100%, 90%);
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.line {
+    position: absolute;
+    background-color: black;
+}
+
+.red {
+    background-color: red;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.green {
+    background-color: green;
+}
+
+#intersectionRow{
+    font-size:5vw; 
+    font-weight: bold; 
+    font-family: Copperplate;
+    color: black;
+}
+
+#intersectionRow:hover{
+    font-size:5.2vw; 
+    font-weight: bold; 
+    font-family: Copperplate;
+    color: white;
+}
+
+    
+.vertical-lines {
+    width: 1px;
+    height: 750px;
+    background-color: black;
+    display: inline-block;
+    margin: 0 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: hsl(0, 100%, 20%);
+    color: hsl(0, 100%, 80%);
+    font-style: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 30%;
+    height: 90%;
+}
+
+button:hover {
+    color: hsl(0, 100%, 90%);
+    background-color: hsl(0, 86%, 19%);
+    width: 33%;
+    height: 100%;
+}
+
+.footer {
+    background-color: hsl(0, 100%, 90%);
+    flex-grow: 1;
+}
+
+@media screen and (max-width: 600px) {
+    .input-container {
+        width: 90%;
+        margin-top: 100px; /* Adjust top margin for smaller screens */
+    }
+
+    .input-container table td {
+        padding: 5px; /* Adjust cell padding for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .output-container {
+        width: 90%;
+        margin-top: 100px; /* Increase top margin on smaller screens */
+    }
+    .output-container table td {
+        padding: 5px; /* Adjust cell padding for smaller screens */
+    }
+}

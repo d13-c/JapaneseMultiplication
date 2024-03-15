@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese Multiplication Method </title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <header>
+        <h1 style="font-size: 3vw; "> Japanese Multiplication Method </h1>
+    </header>
+
+    <div class="page-divider"></div> 
+
+    <div class="input-container">
+        <table>
+            <tr>
+                <td>
+                    <div class="description">
+                        <div class="description-item">
+                            <h3 class="question"> How does the Japanese multiplication method work? </h3>
+                            <div class="answer">
+                                <p>The Japanese multiplication method is an interesting visual method that reduces multiplication to simple counting! Sounds too good to be true, right? </p>
+                                <p>Let’s take 12×32 as our example. Remember that numbers are represented using place value: 12 means one ten and two ones, 32 means three tens and two ones.</p>
+                                <p> We then draw diagonal lines corresponding to the tens and, after leaving a gap, we draw more lines in parallel to represent the ones (it helps to use a different colour). </p>
+                                <p> All we’re doing is taking the familiar place value representation of numbers and making it visual. Now let’s do the number 32, except this time we’ll go in the opposite direction. You should be left with a rough diamond shape, with the lines crossing at the corners:</p>
+                                <div class="center">
+                                    <img src="style/pic1.png" alt="pic 1">
+                                </div>
+                                <br/>
+                                <p>To calculate the product, we just need to count how many times all of the lines intersect and write each number under the diamond.</p>
+                                <div>
+                                    <img src="style/pic2.png" alt="pic 2">
+                                </div>
+                                <p> Begin by grouping the intersections vertically. That is, draw a loop around the group of intersections that is closest to the left side (where the blue and orange lines intersect). Then begin moving right. Draw a loop around the center intersections (the red and blue, and the orange and green). Finally, draw a loop around the intersections that are closest to the right side (where the green and red lines intersect). What you’ve actually done is calculated the number of Hundreds, Tens and Ones in the product:</p>
+                                <div>
+                                    <img src="style/pic3.png" alt="pic 3">  
+                                </div>
+                                <p> So the 12×32 is 3 hundreds, 8 tens and 4 ones – in other words (or <i>symbols</i>, rather!) it is <b>384</b>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <h2 class="emphased-words"> TRY IT OUT </h2>
+                    <p style="font-size: larger;"> Insert two natural numbers between 0 and 99: </p> 
+                </td>
+            </tr>
+
+            <tr>  <td> </td> </tr>
+
+            <tr>
+                <td>
+                    <table style="width: 100%;">
+                        <tr>
+                            <td class="placeholder-input" style="padding: 15px; text-align: center;">
+                                <input type="number" id="input1" min="0" max="99" required />
+                                <label for="input1">FIRST MULTIPLIER: </label>
+                            </td>
+                            <td class="placeholder-input" style="padding: 15px; text-align: center;">
+                                <input type="number" id="input2" min="0" max="99" required />
+                                <label for="input2">SECOND MULTIPLIER: </label>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <button id="multiplyButton"> MULTIPLY NUMBERS </button>
+                </td>
+            </tr>
+
+            <tr> <td> </td> </tr>
+        </table>
+    </div>
+
+
+
+    <div class="output-container">
+        <table id="output-table" style="display: none;" class="clearfix">
+            <tr>
+                <td>
+                    <table>
+                        <tr> <td> </td></tr>
+                        <tr>
+                            <td style="color: red; text-align: right;"> 
+                                <div id="digit1" class="splittedNumbers" style="position: relative; left: 0; border-radius: 100% 0% 0% 100%;"> 
+                                      
+                                </div> 
+                            </td>
+                            <td style="color: orange; text-align: left; "> 
+                                <div id="digit2" class="splittedNumbers" style="position: relative; left: 0; border-radius: 0% 100% 100% 0%;"> 
+                                 
+                                </div> 
+                            </td>
+                            <td style="color: white; text-align: center;"> 
+                                <div id="digitX" class="splittedNumbers" style="background-color: hsl(0, 100%, 30%);"> 
+                                    x 
+                                </div> 
+                            </td>
+                            <td style="color: blue; text-align: right;"> 
+                                <div id="digit3" class="splittedNumbers" style="position: relative; left: 0; border-radius: 100% 0% 0% 100%;"> 
+                                     
+                                </div> 
+                            </td> 
+                            <td style="color: green; text-align: left;"> 
+                                <div id="digit4" class="splittedNumbers" style="position: relative; left: 0; border-radius: 0% 100% 100% 0%;"> 
+                                     
+                                </div> 
+                            </td> 
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr> <td> </td></tr>
+            <tr class="clearfix">
+                <td  class="clearfix">
+                    <div class="clearfix">
+                        <div class="lines-container">
+                            <!-- the lines will be dynamically generated here -->
+                            <br>                    
+                        </div>
+                    </div>
+            </tr>
+
+            <tr> <td> </td> </tr> <tr> <td> </td> </tr> <tr> <td> </td> </tr> <tr> <td> </td> </tr> <tr> <td> </td> </tr>
+            <tr> <td> </td> </tr> <tr> <td> </td> </tr> <tr> <td> </td> </tr> <tr> <td> </td> </tr> <tr> <td> </td> </tr>
+            <tr> <td> </td> </tr> <tr> <td> </td> </tr> <tr> <td> </td> </tr> <tr> <td> </td> </tr> <tr> <td> </td> </tr>
+            <tr> <td> </td> </tr> <tr> <td> </td> </tr> <tr> <td> </td> </tr> <tr> <td> </td> </tr> <tr> <td> </td> </tr>
+            <tr> <td> </td> </tr> <tr> <td> </td> </tr> <tr> <td> </td> </tr> <tr> <td> </td> </tr> <tr> <td> </td> </tr>
+            <tr> <td> </td> </tr> <tr> <td> </td> </tr> <tr> <td> </td> </tr> <tr> <td> </td> </tr> <tr> <td> </td> </tr>
+            <tr> <td> </td> </tr> <tr> <td> </td> </tr> <tr> <td> </td> </tr> <tr> <td> </td> </tr> <tr> <td> </td> </tr> <tr> <td> </td></tr>
+            <tr> <td> </td> </tr> <tr> <td> </td> </tr> <tr> <td> </td> </tr> <tr> <td> </td> </tr> <tr> <td> </td> </tr> <tr> <td> </td></tr>
+          
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td colspan="4" style="background-color: black;">RESULT</td>
+                        </tr>
+                        <tr id="intersectionRow">
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr> <td></td> </tr>
+            <tr> <td></td> </tr>
+
+            <tr>
+                <td>
+                    <button id="restartButton">GO BACK TO HOME PAGE</button>
+                </td>
+            </tr>
+
+            <tr> <td> </td> </tr>
+        </table>
+    </div>
+
+
+
+
+    <div class="page-divider"></div> 
+    <div class="footer"> <br> </div> 
+
+
+
+    <script src="script/script.js"></script>
+</body>
+</html>
